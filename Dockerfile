@@ -11,9 +11,9 @@ RUN apt update -y \
 && apt upgrade -y
 
 RUN apt install wget -y \
-&& apt install git -y \ 
+&& apt install git vim -y \
 && apt install libaio-dev -y \
-&& apt install libaio1 -y 
+&& apt install libaio1 -y
 
 RUN apt install python3.9 -y \
 && apt install python3-pip -y \
@@ -21,8 +21,8 @@ RUN apt install python3.9 -y \
 
 RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
 
-RUN pip install datasets \ 
-&& pip install transformers \ 
+RUN pip install datasets \
+&& pip install transformers \
 && pip install accelerate
 
 RUN pip install triton==1.0.0
