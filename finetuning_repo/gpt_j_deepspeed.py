@@ -56,7 +56,7 @@ if train:
 
         def __getitem__(self, idx):
             return self.input_ids[idx], self.attn_masks[idx]
-    dataset = TxtDataset(all, tokenizer, max_len)
+    dataset = TxtDataset(all[:-10], tokenizer, max_len)
 
     train_size = int(0.9 * len(dataset))
     train_dataset, val_dataset = random_split(dataset, [train_size, len(dataset) - train_size])
